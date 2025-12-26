@@ -1,5 +1,80 @@
-.container{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
     width: 70%;
     margin: 0 auto;
     padding: 100px;
+}
+
+.faq-item {
+    display: flex;
+    flex-direction: column;
+
+    padding: 10px;
+    background-color: #f6f6f6;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+.faq-item-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.collapsiable-plus {
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+
+.icon-plus,
+.icon-minus {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(0deg);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.icon-minus {
+  opacity: 0;
+}
+
+/* OPEN STATE */
+.is-open .icon-plus {
+  opacity: 0;
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.is-open .icon-minus {
+  opacity: 1;
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+
+
+.faq-item-title h6 {
+    font-size: 20px;
+    padding-bottom: 5px;
+    cursor: pointer;
+}
+
+
+
+.faq-item-content {
+    overflow: hidden;
+    height: 0;
+    transition: height 0.35s cubic-bezier(0.2, 0.6, 0.4, 1);
+    /* height animationaly open close */
 }
